@@ -1,4 +1,4 @@
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
+import { HistoryIcon, HomeIcon, NetworkIcon, Search, Settings } from "lucide-react"
 
 import {
     Sidebar,
@@ -10,23 +10,24 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
   } from "@/components/ui/sidebar"
+// import { ChatInput } from "../chat/ChatInput"
   
 
   const items = [
     {
-      title: "Home",
+      title: "Dashboard",
       url: "#",
-      icon: Home,
+      icon: HomeIcon,
     },
     {
-      title: "Inbox",
-      url: "#",
-      icon: Inbox,
+      title: "History",
+      url: "#recentChats",
+      icon: HistoryIcon,
     },
     {
-      title: "Calendar",
+      title: "My Organisation",
       url: "#",
-      icon: Calendar,
+      icon: NetworkIcon,
     },
     {
       title: "Search",
@@ -48,7 +49,7 @@ import {
         <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Application</SidebarGroupLabel>
+            <SidebarGroupLabel>Apna Wakeel</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 {items.map((item) => (

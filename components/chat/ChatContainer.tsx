@@ -13,9 +13,9 @@ interface Props {
 
 export const ChatContainer = ({ messages }: Props) => {
   return (
-    <div className="relative flex flex-col p-4 overflow-y-auto h-[calc(100vh-120px)]">
+    <div className="relative flex absolute top-5 right-0 flex-col m-0 text-center overflow-y-auto ">
       {/* Top-right menu */}
-      <div className="absolute top-4 right-4">
+      <div className="absolute top-5 right-0">
         <DropdownMenu>
           <DropdownMenuTrigger className="focus:outline-none">
             <MoreVertical className="w-5 h-5" />

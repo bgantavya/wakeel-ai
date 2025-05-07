@@ -3,9 +3,13 @@
 import { useState } from 'react';
 import { ChatContainer } from './ChatContainer';
 import { EmptyChatContainer } from './EmptyChatContainer';
-
+type Message = {
+  id: number;
+  sender: string;
+  text: string;
+};
 export const ChatWrapper = () => {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<Message[]>([]);
 
   const addMessage = (text: string) => {
     const newMessage = {
@@ -14,11 +18,18 @@ export const ChatWrapper = () => {
       text,
     };
     setMessages((prev) => [...prev, newMessage]);
+
   };
 
-  if (messages.length === 0) {
-    return <EmptyChatContainer onSend={addMessage} />;
-  }
+  // if (messages.length === 0) {
+  //   return ;
+  // }
 
-  return <ChatContainer messages={messages} />;
+  return(
+
+    <>
+    <ChatContainer messages={messages} />
+    <EmptyChatContainer onSend={addMessage} />
+  </> 
+  )
 };
