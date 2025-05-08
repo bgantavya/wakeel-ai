@@ -29,7 +29,8 @@ export const ChatWrapper = () => {
 
     <>
     <ChatContainer messages={messages} />
-    <EmptyChatContainer onSend={addMessage} />
+    <EmptyChatContainer onSend={addMessage} hasMessages={messages.length > 0} />
+
   </> 
   )
 };

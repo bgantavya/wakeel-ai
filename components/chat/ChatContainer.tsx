@@ -1,11 +1,11 @@
 import { ChatMessage } from './ChatMessage';
-import { MoreVertical } from 'lucide-react';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+// import { MoreVertical } from 'lucide-react';
+// import {
+//   DropdownMenu,
+//   DropdownMenuContent,
+//   DropdownMenuItem,
+//   DropdownMenuTrigger,
+// } from '@/components/ui/dropdown-menu';
 
 interface Props {
   messages: { id: number; sender: string; text: string }[];
@@ -13,9 +13,9 @@ interface Props {
 
 export const ChatContainer = ({ messages }: Props) => {
   return (
-    <div className="relative flex absolute top-5 right-0 flex-col m-0 text-center overflow-y-auto ">
+    <div className="relative flex absolute top-0 right-0 flex-col m-0  text-center overflow-y-auto ">
       {/* Top-right menu */}
-      <div className="absolute top-5 right-0">
+      {/* <div className="absolute top-5 right-0">
         <DropdownMenu>
           <DropdownMenuTrigger className="focus:outline-none">
             <MoreVertical className="w-5 h-5" />
@@ -25,7 +25,7 @@ export const ChatContainer = ({ messages }: Props) => {
             <DropdownMenuItem onClick={() => console.log('Delete chat')}>Delete chat</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-      </div>
+      </div> */}
 
       {/* Messages */}
       {messages.map((msg) => (

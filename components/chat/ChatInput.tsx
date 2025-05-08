@@ -14,7 +14,7 @@ export const ChatInput = () => {
   };
 
   return (
-    <div className="flex gap-2 p-4 border-t">
+    <div className="flex gap-2 p-0 border-t">
       <Input
         className="flex-1"
         placeholder="Type a message..."
