@@ -1,7 +1,7 @@
 
 import {
   HistoryIcon,
-  HomeIcon,
+  // HomeIcon,
   // NetworkIcon,
   PersonStanding,
   // Search,
