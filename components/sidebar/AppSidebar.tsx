@@ -17,7 +17,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 import {
-  Sidebar,
+  SidebarFooter
+  ,Sidebar,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
@@ -28,7 +29,7 @@ import {
 } from "@/components/ui/sidebar";
 
 const items = [
-  { title: "Dashboard", url: "#", icon: HomeIcon },
+  // { title: "Dashboard", url: "#", icon: HomeIcon },
   { title: "Hire A Lawyer", url: "#", icon: PersonStanding },
   // { title: "History", url: "#recentChats", icon: HistoryIcon },
   // { title: "My Organisation", url: "#", icon: NetworkIcon },
@@ -52,17 +53,7 @@ export function AppSidebar() {
           <SidebarGroupLabel>Vidhi 7.0</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url} className="flex items-center gap-2">
-                      <item.icon className="w-5 h-5" />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-
+              
               <SidebarGroupLabel>Recent Chats</SidebarGroupLabel>
               {recentChats.map((chat) => (
                 <SidebarMenuItem key={chat.title} className="relative">
@@ -91,11 +82,25 @@ export function AppSidebar() {
                   </div>
                 </SidebarMenuItem>
               
-              ))}
+            ))}
+            <SidebarFooter className="fixed bottom-0">
+
+            {items.map((item) => (
+              <SidebarMenuItem key={item.title}>
+                <SidebarMenuButton asChild>
+                  <a href={item.url} className="flex items-center gap-2">
+                    <item.icon className="w-5 h-5" />
+                    <span>{item.title}</span>
+                  </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+            </SidebarFooter>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
     </Sidebar>
+
   );
 }
