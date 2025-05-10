@@ -35,11 +35,11 @@ export const EmptyChatContainer = ({ onSend, hasMessages }: Props) => {
       : "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl shadow-xl"
   }`}
 >
-  <form action="" method="get" className="space-y-3 w-full max-w-4xl mx-auto">
+  <form action="" method="get" className="space-y-3 w-full max-w-4xl mb-4 mx-auto">
     {/* Text input container */}
-    <div className="flex items-center gap-2 rounded-xl bg-inherit px-3 py-2 border border-border">
+    <div className="flex items-center gap-2 rounded-xl bg-inherit px-3 pt-2 border border-border">
       <Textarea
-        className="flex-1 h-10 resize-none border-none bg-inherit text-[hsl(var(--foreground))] placeholder-[hsl(var(--muted-foreground))] focus-visible:ring-0 focus-visible:ring-offset-0"
+        className="flex-1 h-5 resize-none border-none bg-inherit text-[hsl(var(--foreground))] placeholder-[hsl(var(--muted-foreground))] focus-visible:ring-0 focus-visible:ring-offset-0"
         placeholder="Type your legal problem here..."
         value={input}
         onChange={(e) => setInput(e.target.value)}
@@ -54,6 +54,9 @@ export const EmptyChatContainer = ({ onSend, hasMessages }: Props) => {
       </label>
       <Input type="file" id="fileUpload" className="hidden" />
 
+    <p className="text-xs text-muted-foreground text-center ml-auto pb-2">
+      AI Assistant can make mistakes. Consider checking important information.
+    </p>
       <div className="ml-auto flex gap-2">
         <Button type="button" onClick={handleSend} className="rounded-full">
           <SendIcon className="w-4 h-4" />
@@ -65,9 +68,6 @@ export const EmptyChatContainer = ({ onSend, hasMessages }: Props) => {
     </div>
 
     {/* Disclaimer */}
-    <p className="text-xs text-muted-foreground text-center mt-2">
-      AI Assistant can make mistakes. Consider checking important information.
-    </p>
   </form>
 </div>
   );

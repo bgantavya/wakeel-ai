@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {ThemeProvider} from "@/components/theme-provider"
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/components/sidebar/AppSidebar"
-import { ModeToggle } from "./ModeToggle";
-import { MenuIcon, Sidebar, SidebarIcon } from "lucide-react";
+// import {ThemeProvider} from "@/components/theme-provider"
+// import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+// import { AppSidebar } from "@/components/sidebar/AppSidebar"
+// import { ModeToggle } from "./ModeToggle";
+// import { MenuIcon, Sidebar, SidebarIcon } from "lucide-react";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],

@@ -3,15 +3,15 @@ import {
   HistoryIcon,
   // HomeIcon,
   // NetworkIcon,
-  PersonStanding,
+  // PersonStanding,
   // Search,
-  Settings,
+  // Settings,
   Plus,
   MoreHorizontal,
-  MoreVertical,
+  // MoreVertical,
   Settings2Icon,
-  Scale,
-  Scale3DIcon,
+  // Scale,
+  // Scale3DIcon,
   LucideScale,
 } from "lucide-react";
 
@@ -26,12 +26,7 @@ import {
   SidebarFooter
   ,Sidebar,
   SidebarContent,
-  SidebarGroup,
-  SidebarGroupContent,
-  SidebarGroupLabel,
-  SidebarMenu,
   SidebarMenuButton,
-  SidebarMenuItem,
   SidebarHeader,
 } from "@/components/ui/sidebar";
 import { Button } from "../ui/button";
