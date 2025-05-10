@@ -6,7 +6,13 @@ import {
   PersonStanding,
   // Search,
   Settings,
+  Plus,
+  MoreHorizontal,
   MoreVertical,
+  Settings2Icon,
+  Scale,
+  Scale3DIcon,
+  LucideScale,
 } from "lucide-react";
 
 import {
@@ -26,80 +32,79 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarHeader,
 } from "@/components/ui/sidebar";
-
-const items = [
-  // { title: "Dashboard", url: "#", icon: HomeIcon },
-  { title: "Hire A Lawyer", url: "#", icon: PersonStanding },
-  // { title: "History", url: "#recentChats", icon: HistoryIcon },
-  // { title: "My Organisation", url: "#", icon: NetworkIcon },
-  // { title: "Search", url: "#", icon: Search },
-  { title: "Settings", url: "#", icon: Settings },
-];
+import { Button } from "../ui/button";
 
 const recentChats = [
-  { title: "chat1", url: "#", icon: HistoryIcon },
-  { title: "chat2", url: "#", icon: HistoryIcon },
-  { title: "chat3", url: "#", icon: HistoryIcon },
-  { title: "chat4", url: "#", icon: HistoryIcon },
-  { title: "chat5", url: "#", icon: HistoryIcon },
-];
+  { id:1, title: "chat1", url: "#", icon: HistoryIcon, date:"X days ago" },
+  { id:2, title: "chat2", url: "#", icon: HistoryIcon, date:"X days ago" },
+  { id:3, title: "chat3", url: "#", icon: HistoryIcon, date:"Y days ago" },
+  { id:4, title: "chat4", url: "#", icon: HistoryIcon, date:"Y days ago" },
+  { id:5, title: "chat5", url: "#", icon: HistoryIcon, date:"Z days ago" },
+]
 
 export function AppSidebar() {
   return (
-    <Sidebar>
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarGroupLabel>Vidhi 7.0</SidebarGroupLabel>
-          <SidebarGroupContent>
-            <SidebarMenu>
-              
-              <SidebarGroupLabel>Recent Chats</SidebarGroupLabel>
-              {recentChats.map((chat) => (
-                <SidebarMenuItem key={chat.title} className="relative">
-                  <SidebarMenuButton asChild>
-                    <a href={chat.url} className="flex items-center gap-2 pr-8">
-                      <chat.icon className="w-5 h-5" />
-                      <span>{chat.title}</span>
-                    </a>
-                  </SidebarMenuButton>
+    <Sidebar className="w-72">
+      <SidebarHeader>
+        <header className="text-center text-2xl font-semibold p-5 pb-0">Vidhi 7.0</header>
+        <div className="p-4 border-b border-none">
+            <Button
+              variant="default"
+              className="w-full justify-start gap-2"
+              // onClick = {newChat}
+            >
+              <Plus size={16} />
+              New chat
+            </Button>
+          </div>
+      </SidebarHeader>
+<SidebarContent>
+      {recentChats.map((chat) => (
+            <div
+              key={chat.id}
+              className="p-2 hover:bg-muted flex justify-between items-start cursor-pointer"
+              // onClick={() => setSelectedChat(chat.id, dummyMessages[chat.id])}
+            >
+              <div className="flex flex-col gap-1">
+                <span className="font-medium">{chat.title}</span>
+                <span className="text-xs text-muted-foreground">
+                  {chat.date}
+                </span>
+              </div>
 
-                  {/* Dropdown menu button in the top right of the item */}
-                  <div className="absolute right-2 top-1/2 -translate-y-1/2">
-                    <DropdownMenu>
-                      <DropdownMenuTrigger className="focus:outline-none">
-                        <MoreVertical className="w-4 h-4 text-muted-foreground" />
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
-                        <DropdownMenuItem>
-                          Rename chat
-                        </DropdownMenuItem>
-                        <DropdownMenuItem >
-                          Delete chat
-                        </DropdownMenuItem>
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </div>
-                </SidebarMenuItem>
-              
-            ))}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    // onClick={(e) => {e.stopPropagation()}} // Prevent chat selection when clicking menu
+                    className="p-1 rounded hover:bg-accent"
+                  >
+                    <MoreHorizontal size={16} />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent side="right" align="start">
+                  <DropdownMenuItem>Rename</DropdownMenuItem>
+                  <DropdownMenuItem>Delete Chat</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+          ))}
+        </SidebarContent>
             <SidebarFooter className="fixed bottom-0">
-
-            {items.map((item) => (
-              <SidebarMenuItem key={item.title}>
+          <div className="p-4 m-0 border-t border-none pb-0 text-center w-full flex justify-center">
+            <Button variant="default" className="gap-2">
+              <LucideScale size={20} />
+              Consult a Lawyer
+            </Button>
+          </div>
                 <SidebarMenuButton asChild>
-                  <a href={item.url} className="flex items-center gap-2">
-                    <item.icon className="w-5 h-5" />
-                    <span>{item.title}</span>
+                  <a href="#" className="p-5 mb-8 flex ">
+                    <Settings2Icon className="w-5 h-5 " />
+                    <span>Settings</span>
                   </a>
                 </SidebarMenuButton>
-              </SidebarMenuItem>
-            ))}
             </SidebarFooter>
-            </SidebarMenu>
-          </SidebarGroupContent>
-        </SidebarGroup>
-      </SidebarContent>
     </Sidebar>
 
   );

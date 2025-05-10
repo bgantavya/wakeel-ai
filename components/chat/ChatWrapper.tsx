@@ -29,8 +29,12 @@ export const ChatWrapper = () => {
 
     <>
     <ChatContainer messages={messages} />
-    <EmptyChatContainer onSend={addMessage} hasMessages={messages.length > 0} />
+    {/* <EmptyChatContainer onSend={addMessage} hasMessages={messages.length > 0} /> */}
+     <div className="w-full max-w-3xl">
+          <EmptyChatContainer onSend={addMessage} hasMessages={messages.length>0}/>
+          {/* <ChatInput onSend={addMessage} /> */}
 
+        </div>
   </> 
   )
 };

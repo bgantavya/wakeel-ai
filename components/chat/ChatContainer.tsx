@@ -13,7 +13,7 @@ interface Props {
 
 export const ChatContainer = ({ messages }: Props) => {
   return (
-    <div className="relative flex absolute top-0 right-0 flex-col m-0  text-center overflow-y-auto ">
+    <div className="relative m-5 flex absolute top-0 right-0 flex-col m-0  text-center overflow-y-auto ">
       {/* Top-right menu */}
       {/* <div className="absolute top-5 right-0">
         <DropdownMenu>

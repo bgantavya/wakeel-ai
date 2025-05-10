@@ -5,6 +5,7 @@ import {ThemeProvider} from "@/components/theme-provider"
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
 import { AppSidebar } from "@/components/sidebar/AppSidebar"
 import { ModeToggle } from "./ModeToggle";
+import { MenuIcon, Sidebar, SidebarIcon } from "lucide-react";
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
 //   subsets: ["latin"],
@@ -30,21 +31,9 @@ export default function RootLayout({
       <body
         className="{`${geistSans.variable} ${geistMono.variable} antialiased`} "
       >
-        <ThemeProvider
-        attribute="class"
-        defaultTheme="system"
-        enableSystem
-        disableTransitionOnChange>
-        <SidebarProvider>
-        <AppSidebar />
-        <SidebarTrigger />
-      
-      <ModeToggle/>
+        
         {children}
-     
-    </SidebarProvider>
-
-        </ThemeProvider>
+    
         
       </body>
     </html>
